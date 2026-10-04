@@ -1,18 +1,18 @@
-# infinite-grid
+# rapid-grid
 
 A zero runtime dependency, framework agnostic, two-axis virtualized data grid for JavaScript and TypeScript. It renders visible rows and columns with a recycled DOM cell pool and works with plain JavaScript, React, Vue, Angular, Svelte, Web Components, and other frameworks through a plain DOM host.
 
 ## Install
 
 ```sh
-npm install infinite-grid
+npm install rapid-grid
 ```
 
 ```ts
-import { InfiniteGrid, CellRange, DataType, SelectionMode } from 'infinite-grid';
-import 'infinite-grid/style.css';
+import { RapidGrid, CellRange, DataType, SelectionMode } from 'rapid-grid';
+import 'rapid-grid/style.css';
 
-const grid = new InfiniteGrid('#grid', {
+const grid = new RapidGrid('#grid', {
   items: Array.from({ length: 100_000 }, (_, id) => ({ id, name: `Item ${id}`, price: id / 10 })),
   columns: [
     { binding: 'id', width: 80, dataType: DataType.Number },
@@ -35,7 +35,7 @@ The host **must have a height**. The grid adds its own positioned child and leav
 
 ### Plain JavaScript
 
-Import the package from an ESM build tool, or load `dist/esm/index.js` from an installed package path. Use `require('infinite-grid')` in CommonJS. The grid uses only browser DOM APIs and does not depend on a component framework.
+Import the package from an ESM build tool, or load `dist/esm/index.js` from an installed package path. Use `require('rapid-grid')` in CommonJS. The grid uses only browser DOM APIs and does not depend on a component framework.
 
 ### Framework integration
 

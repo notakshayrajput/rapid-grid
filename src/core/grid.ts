@@ -15,11 +15,11 @@ import { AllowDragging, AllowMerging, CellEditEventArgs, CellRangeEventArgs, Col
 
 type EventName = 'formatItem' | 'cellRecycling' | 'beginningEdit' | 'cellEditEnding' | 'cellEditEnded' |
   'selectionChanging' | 'selectionChanged' | 'draggedRow' | 'draggedColumn';
-type Handler = (grid: InfiniteGrid, args: any) => boolean | void;
+type Handler = (grid: RapidGrid, args: any) => boolean | void;
 interface GridResizeObserver { observe(element: Element): void; disconnect(): void }
 declare const ResizeObserver: { new(callback: () => void): GridResizeObserver };
 
-export class InfiniteGrid {
+export class RapidGrid {
   readonly hostElement: HTMLElement;
   readonly collectionView: CollectionView;
   readonly rows: RowCollection;
@@ -282,15 +282,15 @@ export class InfiniteGrid {
       nearBottomEdge: row >= 0 && Math.abs(this.rows.sizes.offset(row + 1) - localY) < 5 };
   }
 
-  onFormatItem(handler: (grid: InfiniteGrid, args: FormatItemEventArgs) => void): () => void { return this.on('formatItem', handler); }
-  onCellRecycling(handler: (grid: InfiniteGrid, args: FormatItemEventArgs) => void): () => void { return this.on('cellRecycling', handler); }
-  onBeginningEdit(handler: (grid: InfiniteGrid, args: CellEditEventArgs) => boolean | void): () => void { return this.on('beginningEdit', handler); }
-  onCellEditEnding(handler: (grid: InfiniteGrid, args: CellEditEventArgs) => boolean | void): () => void { return this.on('cellEditEnding', handler); }
-  onCellEditEnded(handler: (grid: InfiniteGrid, args: CellEditEventArgs) => void): () => void { return this.on('cellEditEnded', handler); }
-  onSelectionChanging(handler: (grid: InfiniteGrid, args: CellRangeEventArgs) => boolean | void): () => void { return this.on('selectionChanging', handler); }
-  onSelectionChanged(handler: (grid: InfiniteGrid, args: CellRangeEventArgs) => void): () => void { return this.on('selectionChanged', handler); }
-  onDraggedRow(handler: (grid: InfiniteGrid, args: DragEventArgs) => void): () => void { return this.on('draggedRow', handler); }
-  onDraggedColumn(handler: (grid: InfiniteGrid, args: DragEventArgs) => void): () => void { return this.on('draggedColumn', handler); }
+  onFormatItem(handler: (grid: RapidGrid, args: FormatItemEventArgs) => void): () => void { return this.on('formatItem', handler); }
+  onCellRecycling(handler: (grid: RapidGrid, args: FormatItemEventArgs) => void): () => void { return this.on('cellRecycling', handler); }
+  onBeginningEdit(handler: (grid: RapidGrid, args: CellEditEventArgs) => boolean | void): () => void { return this.on('beginningEdit', handler); }
+  onCellEditEnding(handler: (grid: RapidGrid, args: CellEditEventArgs) => boolean | void): () => void { return this.on('cellEditEnding', handler); }
+  onCellEditEnded(handler: (grid: RapidGrid, args: CellEditEventArgs) => void): () => void { return this.on('cellEditEnded', handler); }
+  onSelectionChanging(handler: (grid: RapidGrid, args: CellRangeEventArgs) => boolean | void): () => void { return this.on('selectionChanging', handler); }
+  onSelectionChanged(handler: (grid: RapidGrid, args: CellRangeEventArgs) => void): () => void { return this.on('selectionChanged', handler); }
+  onDraggedRow(handler: (grid: RapidGrid, args: DragEventArgs) => void): () => void { return this.on('draggedRow', handler); }
+  onDraggedColumn(handler: (grid: RapidGrid, args: DragEventArgs) => void): () => void { return this.on('draggedColumn', handler); }
 
   destroy(): void {
     this.editor.destroy();

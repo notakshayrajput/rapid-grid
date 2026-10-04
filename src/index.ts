@@ -1,4 +1,4 @@
-export { InfiniteGrid } from './core/grid.js';
+export { RapidGrid } from './core/grid.js';
 export { CollectionView } from './collections/CollectionView.js';
 export { Row, RowCollection } from './collections/RowCollection.js';
 export { Column, ColumnCollection } from './collections/ColumnCollection.js';
