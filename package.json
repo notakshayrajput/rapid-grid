@@ -20,7 +20,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node scripts/build-packages.cjs",
     "test": "npm run build && node --test tests/*.test.cjs",
-    "bench": "npm run build && node benchmarks/scroll.cjs"
+    "bench": "npm run build && node benchmarks/scroll.cjs",
+    "site": "npm run build && node scripts/serve-site.cjs"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
