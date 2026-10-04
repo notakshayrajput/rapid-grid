@@ -4,7 +4,9 @@
   "description": "Framework-agnostic, two-axis virtualized data grid",
   "license": "MIT",
   "type": "module",
-  "sideEffects": ["./style.css"],
+  "sideEffects": [
+    "./style.css"
+  ],
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -16,15 +18,22 @@
     },
     "./style.css": "./style.css"
   },
-  "files": ["dist", "style.css", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "style.css",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node scripts/build-packages.cjs",
     "test": "npm run build && node --test tests/*.test.cjs",
     "bench": "npm run build && node benchmarks/scroll.cjs",
-    "site": "npm run build && node scripts/serve-site.cjs"
+    "site": "npm --prefix ../Marketing/site run site"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
