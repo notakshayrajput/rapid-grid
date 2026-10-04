@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tgz
+site/
+examples/
+scripts/serve-site.cjs
+.npm-cache/

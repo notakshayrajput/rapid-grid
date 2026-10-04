@@ -1,0 +1,29 @@
+.ig-root {
+  font: 13px/1.4 system-ui, sans-serif;
+  color: #17212d;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  box-sizing: border-box;
+  user-select: none;
+}
+.ig-corner,
+.ig-column-headers,
+.ig-row-headers { background: #f1f5f9; }
+.ig-corner,
+.ig-column-header,
+.ig-row-header,
+.ig-cell { border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+.ig-column-header,
+.ig-row-header,
+.ig-cell { padding: 6px 8px; white-space: nowrap; text-overflow: ellipsis; }
+.ig-column-header,
+.ig-row-header { font-weight: 600; cursor: default; }
+.ig-row-header { text-align: right; color: #475569; }
+.ig-cell { background: #fff; }
+.ig-cell.ig-selected { background: #dbeafe; box-shadow: inset 0 0 0 1px #60a5fa; }
+.ig-cell:focus-within { overflow: visible !important; z-index: 2; }
+.ig-editor,
+.ig-cell > input,
+.ig-date-range-editor input { box-sizing: border-box; width: 100%; height: 100%; border: 1px solid #2563eb; font: inherit; }
+.ig-date-range-editor { position:absolute;left:0;top:0;z-index:3;display:flex;gap:4px;width:260px;height:32px;padding:2px;background:#fff;box-shadow:0 4px 12px #0002; }
+.ig-date-range-editor input { min-width: 0; }

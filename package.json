@@ -1,0 +1,29 @@
+{
+  "name": "infinite-grid",
+  "version": "0.1.0",
+  "description": "Framework-agnostic, two-axis virtualized data grid",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": ["./style.css"],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./style.css": "./style.css"
+  },
+  "files": ["dist", "style.css", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node scripts/build-packages.cjs",
+    "test": "npm run build && node --test tests/*.test.cjs",
+    "bench": "npm run build && node benchmarks/scroll.cjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "engines": { "node": ">=18" }
+}
